@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #111318;
+    --card: #f6f7f9;
+    --card-foreground: #111318;
+    --primary: #e12d39;
+    --primary-foreground: #ffffff;
+    --secondary: #eceef2;
+    --secondary-foreground: #111318;
+    --muted: #eceef2;
+    --muted-foreground: #5c6270;
+    --accent: #e8eaef;
+    --accent-foreground: #111318;
+    --destructive: #dc2626;
+    --border: #e2e5ec;
+    --input: #d8dce5;
+    --ring: #e12d39;
+    --radius: 0.5rem;
+
+    /* Semantic mappings */
+    --bg: var(--background);
+    --text: var(--foreground);
+    --text-muted: var(--muted-foreground);
+    --text-faint: #848b99;
+    --bg-subtle: var(--card);
+    --danger: var(--destructive);
+    --like: var(--primary);
+    --accent-hover: #c81e2a;
+  }
+
+  .dark {
+    --background: #0b0c10;
+    --foreground: #f4f5f7;
+    --card: #13151b;
+    --card-foreground: #f4f5f7;
+    --primary: #ef4444;
+    --primary-foreground: #ffffff;
+    --secondary: #1b1e26;
+    --secondary-foreground: #f4f5f7;
+    --muted: #1b1e26;
+    --muted-foreground: #949aa8;
+    --accent: #1f232d;
+    --accent-foreground: #f4f5f7;
+    --destructive: #f87171;
+    --border: rgba(255, 255, 255, 0.09);
+    --input: rgba(255, 255, 255, 0.14);
+    --ring: #ef4444;
+
+    --bg: var(--background);
+    --text: var(--foreground);
+    --text-muted: var(--muted-foreground);
+    --text-faint: #676d7c;
+    --bg-subtle: var(--card);
+    --danger: var(--destructive);
+    --like: var(--primary);
+    --accent-hover: #dc2626;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Header & Overlay Backdrop */
+.glass {
+  background-color: color-mix(in srgb, var(--background) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Press soft interaction */
+.press-soft {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+}
+.press-soft:active {
+  transform: scale(0.98);
+}
+
+/* Utility to hide scrollbar across browsers */
+.no-scrollbar, [scrollbar-width="none"] {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar, [scrollbar-width="none"]::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom scrollbars for internal panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Webtoon continuous canvas container */
+.webtoon-panel-container {
+  line-height: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+.webtoon-panel-container img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}

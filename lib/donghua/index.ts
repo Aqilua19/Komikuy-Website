@@ -1,0 +1,10 @@
+export * from "./types";
+export * from "./errors";
+export * from "./client";
+export { getHome } from "./scrapers/home";
+export { searchDonghua } from "./scrapers/search";
+export { listGenres, getGenre } from "./scrapers/genres";
+export { getAnimeList } from "./scrapers/anime-list";
+export { getInfo } from "./scrapers/info";
+export { getEpisode } from "./scrapers/episode";
+export { getVideoSource } from "./scrapers/video-source";

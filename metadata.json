@@ -1,0 +1,6 @@
+{
+  "name": "KomaKatsu",
+  "description": "Platform baca komik online dengan pengalaman membaca sinematik dan koleksi manga/manhwa/manhua terlengkap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
